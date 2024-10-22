@@ -31,7 +31,7 @@ const productSchema = new mongoose.Schema({
     },
     brand: {
         type: String,
-        required: true //  brand is required
+       // required: true //  brand is required
     },
     rating: {
         type: Number,

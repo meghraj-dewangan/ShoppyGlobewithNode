@@ -1,6 +1,7 @@
 import express from "express";
 import { fetchallProducts, addProduct, logIn, register, fetchProductById, addProductToCart, removeProductFromCart, fetchCart, getUsernameByEmail, updateProduct, deleteProduct, updateCartItemQuantityPlus, updateCartItemQuantityMinus, clear } from "../Controller/Products.controller.js";
 import { authenticateToken } from "../Server.js";
+import { saveProduct } from "../Controller/SaveToMongodb.js";
 
 const router = express.Router();
 
@@ -8,6 +9,7 @@ const router = express.Router();
 router.get("/products", fetchallProducts);
 router.get("/products/:id", fetchProductById);
 router.post("/product", addProduct);
+router.post('/productadd',saveProduct);
 router.put("/product/:id", updateProduct);  
 router.delete("/product/:id", deleteProduct);
 
